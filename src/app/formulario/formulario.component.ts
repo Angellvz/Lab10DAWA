@@ -10,7 +10,7 @@ export class FormularioComponent {
   email: string = '';
   formularioValido: boolean = false;
   emailValido: boolean = false;
-  
+
   verificarEmail() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     this.emailValido = emailRegex.test(this.email);
@@ -18,6 +18,11 @@ export class FormularioComponent {
 
   verificarFormulario(form: NgForm) {
     form.control.markAllAsTouched();
+  }
+  mostrarConfirmacion(event: Event) {
+    if (!confirm('¿Estás seguro de enviar el formulario?')) {
+      event.preventDefault(); // Evitar el envío del formulario
+    }
   }
   onSubmit() {
     console.log('Formulario enviado');
