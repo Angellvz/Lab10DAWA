@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 export class FormularioComponent {
   nombre: string = '';
   email: string = '';
-  formularioValido: boolean = false;
+  formularioValido: boolean = false;  
   emailValido: boolean = false;
 
   verificarEmail() {
