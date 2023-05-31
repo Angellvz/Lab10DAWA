@@ -1,10 +1,15 @@
-<form (submit)="onSubmit()" #form="ngForm">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required>
-    
-    <label for="email">Email:</label>
-    <input type="email" id="email" [(ngModel)]="email" name="email" required (ngModelChange)="verificarEmail()">
-    
-    <button type="submit" [disabled]="!emailValido " (click)="mostrarConfirmacion($event)">Enviar</button>
-  </form>
-  
+<form class="form " (submit)="onSubmit()" #form="ngForm">
+  <div class="title">Formulario</div>
+  <div class="subtitle">Laboratorio 10</div>
+  <div class="input-container ic1">
+    <input class="input" type="text" id="nombre" [(ngModel)]="nombre" name="nombre" placeholder=" " required/>
+    <div class="cut"></div>
+    <label for="nombre" class="placeholder" >Nombre</label>
+  </div>
+  <div class="input-container ic2">
+    <input class="input" type="email" id="email" [(ngModel)]="email" name="email" required (ngModelChange)="verificarEmail()" placeholder=" " />
+    <div class="cut"></div>
+    <label for="email" class="placeholder">Email</label>
+  </div>
+  <button class="submit" type="submit" [disabled]="!emailValido " (click)="mostrarConfirmacion($event)">Enviar</button>
+</form>
